@@ -5,7 +5,7 @@ const Settings = (props) => {
     return (
         <header className={s.settingsHeader}>
             <div>
-                News
+                Настройки
             </div>
         </header>
     )

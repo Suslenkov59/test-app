@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './../Dialogs.module.css';
+import s from './Message.module.css';
 
 const Message = (props) => {
 
@@ -11,10 +11,10 @@ const Message = (props) => {
     }
     return <div className={s.dialog}>
         <div>
-            <textarea ref={newMessageElement}>{props.message}</textarea>
+            <textarea className={s.textarea} ref={newMessageElement}>{props.message}</textarea>
         </div>
         <div>
-            <button onClick= {addMessage}>Ответить</button>
+            <button className={s.button} onClick= {addMessage}>Ответить</button>
         </div>
     </div>
 

@@ -18,15 +18,15 @@ const MyPosts = (props) => {
     }
 
     return (
-        <div className={s.postsBlock}>
+        <div>
             <h2>Мои посты</h2>
             <div>
                 <div>
-                    <textarea onChange={onPostChange} ref={newPostElement}
+                    <textarea className={s.textarea} onChange={onPostChange} ref={newPostElement}
                               value={props.newPostText} />
                 </div>
                 <div>
-                    <button onClick={ addPost }>Добавить запись</button>
+                    <button className={s.button} onClick={ addPost }>Добавить запись</button>
                 </div>
             </div>
             <div className={s.posts}>

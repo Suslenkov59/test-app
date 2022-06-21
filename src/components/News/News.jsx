@@ -5,7 +5,7 @@ const News = (props) => {
     return (
         <header className={s.newsHeader}>
             <div>
-                News
+                Новости
             </div>
         </header>
     )

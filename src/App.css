@@ -2,7 +2,6 @@
     /*margin: auto;*/
     display: grid;
     background-color: #edeef0;
-
     grid-template-areas: 'h h' 'n c';
     /*grid-template-rows: 200px 2fr;*/
     /*grid-auto-columns: 2fr 10fr;*/
@@ -25,5 +24,3 @@ textarea {
     width: 500px;
     height: 50px;
 }
-
-

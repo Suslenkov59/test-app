@@ -22,12 +22,15 @@
     float: left;
     color: black;
     text-align: center;
-    padding: 10px;
+    padding: 12px 10px;
     text-decoration: none;
     font-size: 17px;
     line-height: 10px;
     border-radius: 4px;
-    margin : 20px;
+    margin-top : 20px;
+    margin-left : 10px;
+    margin-right : 10px;
+
 }
 .header a.logo {
     font-size: 23px;
@@ -38,16 +41,13 @@
     color: black;
 }
 
-.header a.active {
-    background-color: dodgerblue;
-    color: white;
-}
-
-@media screen and (max-width: 500px) {
-    .header a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-
+.header input[type=text] {
+    float: right;
+    padding: 6px;
+    margin-top: 21px;
+    margin-right: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    text-align: left;
+    border-radius: 7px;
 }

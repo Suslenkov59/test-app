@@ -1,7 +1,17 @@
-.postsBlock {
-    padding: 10px;
+.posts {
+    margin-top: 50px;
 }
 
-.posts {
-    margin-top: 20px;
+.button {
+    float: right;
+    background-color: #edeef0;
+    padding: 10px;
+    font-size: 13px;
+    border: none;
+    border-radius: 10px;
 }
+
+.textarea{
+    width: 495px;
+    border-radius: 8px;
+    }
