@@ -1,0 +1,15 @@
+.header {
+    grid-area: h;
+    background-color: white;
+    display: flex;
+    justify-content: normal;
+    border-radius: 10px;
+
+}
+
+.header img{
+    width: 75px;
+    height: 75px;
+
+
+}
