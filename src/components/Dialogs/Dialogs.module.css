@@ -14,7 +14,7 @@
 }
 
 .dialogsItems .active {
-    color: gold;
+    color: black;
 }
 
 .dialogsHeader {
@@ -31,4 +31,20 @@
 
 .messages .message {
     color: black;
+}
+
+.textarea {
+    width: 300px;
+    height: 30px;
+    border-radius: 8px;
+}
+
+.button {
+    float: right;
+    background-color: #edeef0;
+    padding: 10px;
+    font-size: 10px;
+    border: none;
+    margin: 5px;
+    border-radius: 10px;
 }

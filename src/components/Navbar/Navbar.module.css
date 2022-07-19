@@ -9,12 +9,39 @@
 
     }
 
-.item a {
+.nav a { /*active link*/
     color: #006aae;
     text-decoration: none;
+}
+
+/*.item a {
+    color: #006aae;
+    text-decoration: none;
+    margin-bottom: 30px;
+    text-align: left;
+}*/
+
+.item a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/*.item a:active {
+    color: black;
+}*/
+
+.item1 {
+    color: #006aae;
+    text-decoration: none;
+    height: 12%;
 
 }
 
-.item .active {
-    color: black;
+.item1 a:hover {
+    background-color: #edeef0;
+    color: #000000;
+    border-radius: 8px;
+    padding: 8px 8px;
+    margin-left : -8px;
+
 }
