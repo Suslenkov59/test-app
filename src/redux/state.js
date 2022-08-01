@@ -1,9 +1,7 @@
 import React from 'react'
-
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
-const SEND_MESSAGE = 'SEND-MESSAGE';
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import sidebarReducer from "./sidebar-reducer";
 
 let store = {
     _state: {
@@ -22,27 +20,28 @@ let store = {
                 {
                     id: 1,
                     name: 'Настя',
-                    icon: <img src='https://wald-jaguar.ru/wp-content/uploads/2021/05/CpXdZMN6AvM.jpg'/>
+                    icon: <img src='https://memepedia.ru/wp-content/uploads/2019/12/screenshot_22-1.png'/>
                 },
                 {
                     id: 2,
                     name: 'Кирилл',
-                    icon: <img src='https://wald-jaguar.ru/wp-content/uploads/2021/05/CpXdZMN6AvM.jpg'/>
+                    icon: <img src='https://memepedia.ru/wp-content/uploads/2018/12/kot-kashlyaet-mem.png'/>
                 },
                 {
                     id: 3,
                     name: 'Ростислав',
-                    icon: <img src='https://wald-jaguar.ru/wp-content/uploads/2021/05/CpXdZMN6AvM.jpg'/>
+                    icon: <img
+                        src='https://img02.rl0.ru/afisha/e1200x600i/daily.afisha.ru/uploads/images/c/8b/c8bb6d6b772b0a4706e7f91223a19809.jpg'/>
                 },
                 {
                     id: 4,
                     name: 'Вася',
-                    icon: <img src='https://wald-jaguar.ru/wp-content/uploads/2021/05/CpXdZMN6AvM.jpg'/>
+                    icon: <img src='https://www.meme-arsenal.com/memes/e77529bc5454bebb776dbefd127f68f5.jpg'/>
                 },
                 {
                     id: 5,
                     name: 'Никита',
-                    icon: <img src='https://wald-jaguar.ru/wp-content/uploads/2021/05/CpXdZMN6AvM.jpg'/>
+                    icon: <img src='https://i.pinimg.com/originals/e1/4c/ae/e14cae2f0f44121ab4e3506002ba1a55.jpg'/>
                 },
             ],
             messages: [
@@ -66,42 +65,17 @@ let store = {
     subscribe(observer) {
         this._callSubscriber = observer;
     },
-    dispatch(action) {
-        if (action.type === 'ADD_POST') {
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newPostText,
-                likesCount: 0,
-                dislikesCount: 0,
-            };
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-            this._state.dialogsPage.newMessageBody = action.body;
-            this._callSubscriber(this._state);
-        } else if (action.type === SEND_MESSAGE) {
-            let body = this._state.dialogsPage.newMessageBody;
-            this._state.dialogsPage.newMessageBody = '';
-            this._state.dialogsPage.messages.push({id: 6, message: body});
-            this._callSubscriber(this._state);
-        }
 
+    dispatch(action) {
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
+        this._callSubscriber(this._state);
     }
+
 }
 
-export const addPostActionCreator = () => ({type: ADD_POST})
-export const updateNewPostTextActionCreator = (text) =>
-    ({type: UPDATE_NEW_POST_TEXT, newText: text})
-
-    export const sendMessageCreator = () => ({type: SEND_MESSAGE})
-    export const updateNewMessageBodyCreator = (body) =>
-        ({type: UPDATE_NEW_MESSAGE_BODY, body: body})
-
-
-        export default store;
-        window.store = store;
+export default store;
+window.store = store;
 
