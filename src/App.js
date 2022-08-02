@@ -8,7 +8,7 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import {BrowserRouter, Route} from "react-router-dom";
-import store from "./redux/store";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 const App = (props) => {
     return (
@@ -17,14 +17,9 @@ const App = (props) => {
             <Navbar/>
             <div className='app-wrapper-content'>
                 <Route path='/dialogs'
-                       render={() => <Dialogs
-                           store={props.store}
-                       />}/>
+                       render={() => <DialogsContainer store={props.store} />}/>
                 <Route path='/profile'
-                       render={() => <Profile
-                           profilePage={props.state.profilePage}
-                           dispatch={props.dispatch}
-                       />}/>
+                       render={ () => <Profile store={props.store} /> }/>
                 <Route path='/news'
                        render={() => <News/>}/>
                 <Route path='/music'
